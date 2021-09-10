@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210910 16:37:10.907" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="D:\Projetos\robotframework-bdd-pageobject-tags\tests">
+<suite id="s1-s1" name="Login Face" source="D:\Projetos\robotframework-bdd-pageobject-tags\tests\login_face.robot">
+<test id="s1-s1-t1" name="Validar funcionalidade de Login no Facebook">
+<kw name="Open Login Page Using Chrome Browser" library="resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_PAGE }</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210910 16:37:11.077" level="INFO">Opening browser 'Chrome' to base url 'https://web.facebook.com/?sk=welcome'.</msg>
+<status status="PASS" starttime="20210910 16:37:11.077" endtime="20210910 16:37:13.042"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210910 16:37:13.042" endtime="20210910 16:37:13.165"/>
+</kw>
+<status status="PASS" starttime="20210910 16:37:11.077" endtime="20210910 16:37:13.165"/>
+</kw>
+<kw name="GIVEN Login Page Opened" library="login_face">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210910 16:37:13.166" endtime="20210910 16:37:13.213"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210910 16:37:13.260" level="INFO">Element '//input[@name='email']' is displayed.</msg>
+<status status="PASS" starttime="20210910 16:37:13.213" endtime="20210910 16:37:13.260"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210910 16:37:13.260" endtime="20210910 16:37:13.280"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210910 16:37:13.295" level="INFO">Element '//input[@name='email']' is displayed.</msg>
+<status status="PASS" starttime="20210910 16:37:13.280" endtime="20210910 16:37:13.295"/>
+</kw>
+<status status="PASS" starttime="20210910 16:37:13.165" endtime="20210910 16:37:13.295"/>
+</kw>
+<kw name="AND Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>danieloliveira2767@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210910 16:37:13.296" level="INFO">Typing text 'danieloliveira2767@gmail.com' into text field '//input[@name='email']'.</msg>
+<status status="PASS" starttime="20210910 16:37:13.296" endtime="20210910 16:37:13.375"/>
+</kw>
+<kw name="AND Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>@Test21</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210910 16:37:13.376" level="INFO">Typing text '@Test21' into text field '//input[@name='pass']'.</msg>
+<status status="PASS" starttime="20210910 16:37:13.375" endtime="20210910 16:37:13.443"/>
+</kw>
+<kw name="WHEN Click Login Button" library="login_face">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210910 16:37:13.444" endtime="20210910 16:37:13.462"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 16:37:13.462" level="INFO">Clicking element '//button[@name='login']'.</msg>
+<status status="PASS" starttime="20210910 16:37:13.462" endtime="20210910 16:37:13.496"/>
+</kw>
+<status status="PASS" starttime="20210910 16:37:13.443" endtime="20210910 16:37:13.496"/>
+</kw>
+<kw name="THEN Home Page Opened" library="home_face">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${IG_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210910 16:37:13.497" endtime="20210910 16:37:15.935"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${IG_LOGO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210910 16:37:15.964" level="INFO">Element '//span[.='Bem-vindo ao Facebook, Bot']' is displayed.</msg>
+<status status="PASS" starttime="20210910 16:37:15.935" endtime="20210910 16:37:15.964"/>
+</kw>
+<status status="PASS" starttime="20210910 16:37:13.496" endtime="20210910 16:37:15.964"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210910 16:37:15.965" endtime="20210910 16:37:18.069"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210910 16:37:11.076" endtime="20210910 16:37:18.070"/>
+</test>
+<status status="PASS" starttime="20210910 16:37:10.927" endtime="20210910 16:37:18.071"/>
+</suite>
+<status status="PASS" starttime="20210910 16:37:10.908" endtime="20210910 16:37:18.073"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Face">Tests.Login Face</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210910 16:37:11.075" level="WARN">Imported resource file 'D:\Projetos\robotframework-bdd-pageobject-tags\steps\login_steps.robot' is empty.</msg>
+</errors>
+</robot>

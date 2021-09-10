@@ -6,17 +6,12 @@ Resource            ../steps/login_steps.robot
 Test Setup        Open Login Page Using Chrome Browser
 Test Teardown     Close Browser
 
-*** Variable ***
-
-${username}       danieloliveira2767@gmail.com
-${password}       @Test21
-
 *** Test Case ***
-
+ 
 Validar funcionalidade de Login no Facebook
     [tags]  Smoke
      GIVEN Login Page Opened
-     WHEN input Username And Password       ${username}     ${password}
+     AND Input Text  ${CAMPO_USUARIO}  danieloliveira2767@gmail.com
+     AND Input Text  ${CAMPO_SENHA}  @Test21
+     WHEN Click Login Button 
      THEN Home Page Opened
-
-

@@ -2,27 +2,27 @@
 Library       SeleniumLibrary
 
 *** Variable ***
-${USERNAME_FIELD}             //input[@name='email']
-${PASSWORD_FIELD}             //input[@name='pass']
+${CAMPO_USUARIO}             //input[@name='email']
+${CAMPO_SENHA}             //input[@name='pass']
 ${LOGIN_BUTTON}               //button[@name='login']
 ${ERROR_MESSAGE}              //p[@id='slfErrorAlert']
 
 *** Keywords ***
 Login Page Opened
-  Wait Until Element Is Visible     ${USERNAME_FIELD}
-  Element Should Be Visible         ${USERNAME_FIELD}
-  Wait Until Element Is Visible     ${PASSWORD_FIELD}
-  Element Should Be Visible         ${PASSWORD_FIELD}
+  Wait Until Element Is Visible     ${CAMPO_USUARIO}
+  Element Should Be Visible         ${CAMPO_USUARIO}
+  Wait Until Element Is Visible     ${CAMPO_USUARIO}
+  Element Should Be Visible         ${CAMPO_USUARIO}
 
-Input Username
+input Username
   [Arguments]                       ${username}
   Wait Until Element Is Enabled     ${USERNAME_FIELD}
-  Input Text                        ${USERNAME_FIELD}       ${username}
+  Input username                    ${USERNAME_FIELD}
 
 Input Pass
   [Arguments]                       ${password}
-  Wait Until Element Is Enabled     ${PASSWORD_FIELD}
-  Input Text                        ${PASSWORD_FIELD}       ${password}
+  Wait Until Element Is Enabled     ${CAMPO_SENHA}
+  Input Text                        ${CAMPO_SENHA}       ${password}
 
 Login Button Should Be Enabled
   Wait Until Element Is Enabled     ${LOGIN_BUTTON}
